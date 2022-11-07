@@ -5,21 +5,21 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "20.0.0"
+  version "20.0.01"
   depends_on :macos
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/ivotron/redpanda/releases/download/v20.0.0/rpk_20.0.0_darwin_arm64.tar.gz"
-      sha256 "6cdc2a8aa111bf2341020f8cdb93596e053ddb3e8d67ca22dd0a0509420852b6"
+    if Hardware::CPU.intel?
+      url "https://github.com/ivotron/redpanda/releases/download/v20.0.01/rpk_20.0.01_darwin_amd64.tar.gz"
+      sha256 "b642f81e9f409ef713d38950991746e770e3a3c459e4637f4110a715f94b5cb0"
 
       def install
         bin.install "rpk"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ivotron/redpanda/releases/download/v20.0.0/rpk_20.0.0_darwin_amd64.tar.gz"
-      sha256 "f6097bcc58d0d52d219386402f332fdcd56e3567ea5787e54c115736f63558ef"
+    if Hardware::CPU.arm?
+      url "https://github.com/ivotron/redpanda/releases/download/v20.0.01/rpk_20.0.01_darwin_arm64.tar.gz"
+      sha256 "8f629b524ae2ffe2c67409f3b4f9d3f3a79ad78644f4fbf28af06170184d74a7"
 
       def install
         bin.install "rpk"
